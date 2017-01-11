@@ -15,7 +15,7 @@ class SwiftmailerProfilerServiceProvider implements ServiceProviderInterface
             return new \Swift_Plugins_MessageLogger();
         };
 
-        $container["data_collectors.swiftmailer.collector_container"] = function (Container $app) {
+        $container["data_collectors.swiftmailer.collector_container"] = $container->share(function (Container $app) {
             $container = new SymfonyContainer();
             $container->setParameter("swiftmailer.mailers", ["default" => $app["swiftmailer.options"]]);
             $container->setParameter("swiftmailer.default_mailer", "default");
@@ -25,7 +25,7 @@ class SwiftmailerProfilerServiceProvider implements ServiceProviderInterface
                 $app["data_collectors.swiftmailer.message_logger"]
             );
             return $container;
-        };
+        });
 
         $container->extend('mailer', function (\Swift_Mailer $mailer, Container $container) {
             $mailer->registerPlugin($container['data_collectors.swiftmailer.message_logger']);
