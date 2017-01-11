@@ -1,6 +1,6 @@
 {
-    "name": "texthtml/silex-swiftmailer-profiler",
-    "description": "Swiftmailer profiler for Silex",
+    "name": "straccio/silex-swiftmailer-profiler",
+    "description": "Swiftmailer profiler for Silex 1",
     "keywords": [
         "silex",
         "profiler",
@@ -13,11 +13,15 @@
         {
             "name": "Mathieu Rochette",
             "email": "mathieu@rochette.cc"
+        },
+        {
+            "name": "Cladio Ambrosini",
+            "email": "lord.strambo@gmail.com"
         }
     ],
     "require": {
-        "silex/silex": "^2.0",
-        "silex/web-profiler": "^2.0",
+        "silex/silex": "~1.3",
+        "silex/web-profiler": "1.0.*",
         "symfony/swiftmailer-bundle": "^2.3"
     },
     "autoload": {
