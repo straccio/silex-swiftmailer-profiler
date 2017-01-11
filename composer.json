@@ -21,8 +21,7 @@
     ],
     "require": {
         "silex/silex": "~1.3",
-        "silex/web-profiler": "1.0.*",
-        "symfony/swiftmailer-bundle": "^2.3"
+        "silex/web-profiler": "1.0.*"
     },
     "autoload": {
         "psr-4": {
